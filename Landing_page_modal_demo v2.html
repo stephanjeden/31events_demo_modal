@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Modal Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            margin:0;
+            padding:0;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+            background-color: #4f4d3f18;
+        }
+
+        h1 {
+            font-size: 8vmax; 
+            word-wrap: break-word;
+            hyphens: auto;
+            color: #4F4D3F; 
+            font-weight: 500;  
+        }
+
+        h2 {
+            font-size: 4vmax;
+            color:#47434F;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 3vmax;
+            color:#47434F;
+            font-weight: 200;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 2vmax; 
+            color:#47434f; 
+            font-weight: 300; 
+        }
+        
+        #header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            }
+
+        #headerDiv {
+            margin: 6vmax 0 0 3vw;
+            max-width: 93%;  
+        }
+
+        #eventDetails {
+            display:flex;
+            justify-content: space-around;
+            padding: 0 0 1.1vw 0;
+        }
+
+        #when {
+            text-align: right;
+            margin: 5vmax 3vw 0 3vw;  
+        } 
+
+        #when h2 {
+           text-align: right;
+           flex-basis: 90%; 
+        }
+
+        #where {
+            margin: 5vmax 3vw 0 3vw;
+            color:#696969;
+        }
+
+
+        #where h3 {
+            margin: .5vmax 0 0 0;
+        }
+
+        #details {
+            text-align: right; 
+            margin: 5vmax 3vw 0 12vw;
+        }
+
+        #details h2 {
+            margin-bottom: .7vmax; 
+        } 
+
+        #detailsHeader h2 {
+            text-transform: uppercase;
+            font-size: 3.5vw;
+            color: #333333;
+        }
+
+        #header h1 {
+            text-transform: uppercase;
+        }
+
+        #formDiv {
+            margin: 6vmax 3vmax 5vmax 3vmax;
+            background-color: #4f4d3f18;
+            padding: 20px;
+            border-radius: 11px;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.23); 
+        }  
+
+        #formDiv h2 {
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 2.7vmax;
+            font-size: 4vmax;
+        }
+
+        #formDiv label {
+            background-color: transparent;
+            display: block;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            color: #4F4D3F; 
+            font-size: 2.5vmax;
+            font-weight: 300;
+        }
+
+        #formDiv input {
+            width: 99%; 
+            height: 40px;
+            margin-bottom: 20px;
+            border:none;
+            border-radius: 5px;
+            text-indent: 7px;
+            font-size: 2.3vmax; 
+            color:#4F4D3F;
+            text-transform: uppercase;
+            caret-color: #4F4D3F;
+        }
+
+        #formDiv input:focus {
+        outline-color: #4F4D3F;    
+        outline-style: auto;
+        outline-width: 1px;
+        outline-offset: 0;
+        }
+
+        button {
+            margin: 13px auto;
+            width: 18vmax;
+            height: 5.2vmax; 
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.107);
+            display: block;
+            font-size: 2.3vmax;
+            transition: ease-in-out .2s; 
+            color: #4F4D3F;
+            font-weight: 300;
+        } 
+
+        button:hover {
+            background-color: #4f4d3faa; 
+            color: white; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.387);
+        }
+
+        button:focus {
+        outline-color: #4F4D3F;    
+        outline-style: auto;
+        outline-width: 1px;
+        outline-offset: 0;
+        }
+
+        #successMessage {
+            display: none;
+            text-align: center;
+            font-size: 1.5vmax;
+            vertical-align: top;
+            margin-top: -15px;
+            margin-bottom: 18px;
+        }
+
+
+
+        @media screen and (min-width: 700px) {
+            
+            h1 {
+                font-size: 6.5vmax;
+                
+            }
+
+            h2 {
+                font-size: 3.5vmax;
+            }
+
+            h3 {
+                font-size: 2vmax;
+            }
+
+            #when {
+                margin-top: 0vmax;
+                margin-left: 3vw;
+                display:inline-block;
+                width:42%;
+                vertical-align: top;
+            }
+
+            #where {
+                margin-top: 0vmax; 
+                display: inline-block;
+                width: 45%;
+                vertical-align: top;
+            }
+
+            #when h2 {
+                text-align: left;
+                display: inline-block;
+            } 
+
+            #where h2 {
+                display: inline-block;
+            }
+
+            #header {
+                display: block;
+            }
+
+            #details {
+                margin: 3.5vmax -5px 0 0;
+                background-color: #4c4a4f;
+                padding: 3.5vmax 3vw 3.9vmax 3vw;   
+                max-width: 50vw;   
+                display: inline-block; 
+                vertical-align: top;  
+                box-sizing: border-box;
+                height: 50vh; 
+            } 
+ 
+            #details h2 {
+                text-align: left;
+                color: #eeeeec;
+            }
+
+            #details p {
+                font-size: .8em; 
+                background-color: transparent;
+                color: #eeeeec;
+                text-align: left;
+            }
+
+            #headerDiv {
+            margin: 2.4vmax 0 2vmax 3vw;
+            max-width: 75%;
+            }
+
+            #formDiv { 
+                width: 50vw;  
+                margin: 3.5vmax 0 0 0; 
+                display: inline-block;
+                border-radius: 0;
+                vertical-align: top;
+                box-shadow: none;
+                border: none;
+                box-sizing: border-box;
+                height: 50vh;
+            }
+
+            #formDiv h2 { 
+                font-size: 3.5vmax;
+                margin: .8vmax 0 3vmax 0;
+                vertical-align: top;
+            }
+
+            #formDiv label {
+                font-size: 1.5vmax;
+                display: block;
+                width: 10vw;
+                vertical-align: top;
+                margin-left: 7vw; 
+            } 
+
+            #formDiv input {
+                margin: 0 0 1.1vmax 0;
+                max-width: 400px;
+            } 
+
+            input#fname { 
+                margin-left: 3.5vw; 
+                width: 84%; 
+                margin-top: 1px; 
+            }
+
+            label#fnameLabel, label#lnameLabel {
+                margin-left: 3.5vw;
+            } 
+
+            input#lname {
+                display: inline;   
+                margin-left: 3.5vw;
+                width: 84%;  
+            }
+
+            #fnameDiv, #lnameDiv {
+                display: inline-block;
+                max-width: 43%;
+            }
+
+            #fnameDiv {
+                margin-right: 5%;  
+            }
+
+            label#emailLabel{
+                margin-top: 1.2vmax;  
+                margin-left: 3.5vw;  
+            }  
+
+            input#email {
+                margin: 0 auto;
+                display: block; 
+                width: 85%;     
+                max-width: none;  
+            }
+
+            button {
+                width: 12vmax; 
+                height: 5vmax; 
+                margin-top: 25px;   
+            }
+
+        }
+
+        @media screen and (min-width: 1050px){
+            #formDiv h2 {
+                font-size: 2.5vmax;
+            }
+            label#lnameLabelDesktop {
+                margin-left: 12.8vw; 
+            } 
+        }
+
+        @media screen and (min-width: 1200px) {
+            #formDiv, #details {
+                height: 57vh;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="header">
+        <div id="headerDiv" lang="en">
+            <h1 lang="en">
+                Castle Rock Starlighting
+            </h1>
+        </div>
+        
+        
+        <div id="when"> <h2>Saturday, November 21st, from 3 PM to 6 PM</h2></div>
+        <div id="where"><H2>Phillip S. Miller Park Ampitheater</H2>
+            <h3>210 E Wolfensberger Rd.</h3> 
+            <h3>Castle Rock, CO 80109</h3></div>
+
+        </div>
+
+        <div id="details"><H2>Details</H2>
+            <p>The Castle Rock “Lighting of the Star” has been a community event shared by residents dating back to 1936. The same spirit of volunteerism, generosity and love of tradition exists today as Castle Rock businesses and residents prepare to celebrate Starlighting on the Saturday before Thanksgiving.  The 2020 Castle Rock Starlighting is Saturday, Nov. 21 from 3 PM to 6 PM at three different viewing locations.
+
+                The 2020 Starlighting ceremony will be broadcasted virtually and we will have 3 viewing locations with limited capacity. All details are still being finalized and subject to change.  
+                
+                As one of Castle Rock Chamber’s signature events, this year’s celebration will again include: hot chocolate, non profit booths, strolling entertainers, and live entertainment. Don’t forget to enjoy the Rink at the Rock, an outdoor ice skating rink in downtown Castle Rock as well. Non-profit groups are invited to participate in this well-respected community event to spread the word about their organization.
+                </p></div>
+                
+        </div>
+
+    <form id="formDiv">
+
+        <h2 id="formHeader">Will you be Coming?</h2> 
+
+        <p id="successMessage">Success! You're all set.</p>
+
+        <div id="fnameDiv">
+        <label id="fnameLabel" for="fname">First Name</label>
+        <input required type="text" name="First Name" id="fname">
+        </div>
+
+        <div id="lnameDiv">
+        <label id="lnameLabel" for="lname">Last Name</label>
+        <input required type="text" name="Last Name" id="lname">
+        </div>
+
+        </div>
+        <label id="emailLabel" for="email">Email</label>
+        <input required type="email" name="email" id="email">
+        </div>
+
+        <button type="submit">RSVP</button>
+
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
